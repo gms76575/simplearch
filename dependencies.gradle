@@ -1,0 +1,21 @@
+def archVersion = "1.1.0"
+def draggerVersion = "2.0"
+
+project.ext{
+    dependencies = [
+            "lifecycle-runtime"   : "android.arch.lifecycle:runtime:${archVersion}",
+            "lifecycle-compiler"  : "android.arch.lifecycle:compiler:${archVersion}",
+            //如果还需要使用 LiveData 和 ViewModel 则需要添加：
+            "lifecycle-extensions" : "android.arch.lifecycle:extensions:${archVersion}",
+            //使用 Room 需要添加：
+            "room-runtime"         : "android.arch.persistence.room:runtime:${archVersion}",
+            "room-compiler"        : "android.arch.persistence.room:compiler:${archVersion}",
+            //测试 Room migrations 添加：
+            "room-testing"         : "android.arch.persistence.room:testing:${archVersion}",
+            //在 Room 中使用 RxJava 添加：
+            "room-rxjava"          : "android.arch.persistence.room:rxjava2:${archVersion}",
+
+            "dagger-compiler": "com.google.dagger:dagger-compiler:${draggerVersion}",
+            "dagger": "com.google.dagger:dagger:${draggerVersion}"
+    ]
+}
